@@ -13,7 +13,7 @@ if (process.env.ETCD_PEER_HOSTS) {
   hosts = process.env.ETCD_PEER_HOSTS.split(',');
 }
 
-var statsClient = new StatsClient('localhost:8125');
+var statsClient = new StatsClient(process.env.STATSD_HOST || 'localhost:8125');
 var etcd = new Etcd(hosts);
 
 gatherMetrics();
