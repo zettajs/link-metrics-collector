@@ -8,7 +8,8 @@ var DIRS = {
   Version: '/zetta/version'
 };
 
-var hosts = ['localhost:4001'];
+var hosts = process.env.COREOS_PRIVATE_IPV4 || 'localhost';
+
 if (process.env.ETCD_PEER_HOSTS) {
   hosts = process.env.ETCD_PEER_HOSTS.split(',');
 }
