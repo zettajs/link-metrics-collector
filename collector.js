@@ -14,7 +14,12 @@ if (process.env.ETCD_PEER_HOSTS) {
   hosts = process.env.ETCD_PEER_HOSTS.split(',');
 }
 
-var statsClient = new StatsClient(process.env.STATSD_HOST || 'localhost:8125');
+var usingTelegrafFormat = !!(process.env.INFLUXDB_HOST);
+if (usingTelegrafFormat) {
+  console.log('Using telgraf format.');
+}
+
+var statsClient = new StatsClient(process.env.STATSD_HOST || 'localhost:8125', {}, { telegraf: usingTelegrafFormat });
 var etcd = new Etcd(hosts);
 
 gatherMetrics();

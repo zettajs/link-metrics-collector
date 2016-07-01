@@ -9,6 +9,6 @@
   "author": "",
   "dependencies": {
     "node-etcd": "^4.0.2",
-    "stats-client": "^0.2.0"
+    "stats-client": "^0.3.1"
   }
 }
