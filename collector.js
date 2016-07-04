@@ -19,7 +19,7 @@ if (usingTelegrafFormat) {
   console.log('Using telgraf format.');
 }
 
-var statsClient = new StatsClient(process.env.STATSD_HOST || 'localhost:8125', {}, { telegraf: usingTelegrafFormat });
+var statsClient = new StatsClient(process.env.STATSD_HOST || 'localhost:8125', {}, { telegraf: usingTelegrafFormat, prefix: 'link' });
 var etcd = new Etcd(hosts);
 
 gatherMetrics();
