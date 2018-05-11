@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Adam Magaluk <AdamMagaluk@google.com>",
+  "license": "Apache-2.0",
   "dependencies": {
     "node-etcd": "^4.0.2",
     "stats-client": "^1.0.0"
